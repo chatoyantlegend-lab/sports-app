@@ -29,7 +29,8 @@ if(isset($_POST['register'])){
             VALUES ('$username', '$email', '$password')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<p style = 'color:green;'> Registered succesfully! </p>";
+        header("Location: login.php?signup=success");
+        exit();
     }
   else {
     echo "<p style = 'color:red;'> Error " . $conn->error . "</p>";
