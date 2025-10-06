@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -31,16 +30,3 @@
 	</div>
 </body>
 </html>
-<?php
-
-session_start();
-if(!isset($_SESSION['user']))
-	{
-		header("Location: login.php");
-		exit();
-	}
-
-?>
-
-<h2>Welcome, <?php echo $_SESSION['user']; ?>!</h2>
-<a href=logout.php>Logout</a>
