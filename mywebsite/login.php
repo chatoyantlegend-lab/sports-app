@@ -13,7 +13,7 @@ session_start(); // Start session to remember logged-in user
 	<label>Password:</label>
 	<input type="password" name="password" required><br></br>
 
-	>button type="submit" name="login">Login</button>
+	<button type="submit" name="login">Login</button>
 
 </form>
 
