@@ -1,7 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
-	box-sizing: borer-box;
+	box-sizing: border-box;
 	font-family: Arial, sans-serif;
 }
 
@@ -95,6 +95,8 @@ transition: background-color 0.3s;
 	
 }
 
+
+
 .profile-card {
 	background-color: #ffffff;
 	width: 600px;
@@ -103,7 +105,7 @@ transition: background-color 0.3s;
 	display: flex;
 	align-items: center;
 	padding: 20px 40px;
-	box-shadow: 0 4px 8px rgba (0,0,0,0.1);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 	margin: 15px auto 50; /* center it horizontally and move it down a bit */
 }
 
@@ -135,3 +137,45 @@ transition: background-color 0.3s;
 	font-size: 14px;
 	color: #555;
 }
+
+/* Dropdown menus */
+.notif-container,
+.settings-container {
+	position: relative;
+	display: inline-block;
+}
+.notif-dropdown {
+	top: 30px;
+	right: 30px;
+	position: absolute;
+}
+.settings-dropdown{
+	top: 30px;
+	right: 0px;
+	position: absolute;
+}
+.notif-dropdown,
+.settings-dropdown {
+	display: none;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	padding: 10px;
+	width: 300px;
+	z-index: 10;
+}
+	.notif-dropdown a,
+	.settings-dropdown a {
+		display: block;
+		padding: 8px 12px;
+		color: #333;
+		text-decoration: none;
+		border-radius: 6px;
+	}
+		.notif-dropdown a:hover,
+		.settings-dropdown a:hover {
+			background-color: #f0f0f0;
+		}
+
+
