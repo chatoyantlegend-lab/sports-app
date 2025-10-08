@@ -15,71 +15,123 @@ body {
 	width: 200px;
 	background-color: #fff;
 	border-right: 2px solid #ccc;
+	display: flex;
+	flex-direction: column;
+	
+	align-items: center;
 	padding: 20px;
+	height: 100vh;
+
+	
 
 }
-
-.sidebar lu {
-	list-style: none;
+.logo {
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }
 
-.sidebar li {
-	margin-bottom: 20px;
-	cursor: pointer;
+.logo img {
+
+	width: 100px;
+	height: auto;
+	display: block;
+	
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 100px;
+	margin-top: 125px;
+	flex-grow:1 ;
+}
+
+.menu li {
+list-style: none;
+display: flex;
+align-items: center;
+gap: 10px;
+background-color: #2d3e50;
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+cursor: pointer;
+width: 80%;
+justify-content: center;
+transition: background-color 0.3s;
+}
+
+.menu li:hover {
+	background-color: #3e5065;
+}
+
+.menu img {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+
 }
 
 .main-content {
 	flex: 1;
 	position: relative;
-	padding: 20px;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
 }
 
 .top-right-icons {
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 10px;
+	right: 10px;
 }
 
 .top-right-icons span {
 	margin-left: 10px;
 	font-size: 24px;
 	cursor: pointer;
+	
 }
 
-.profile-cylinder {
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
-	background: #ddd;
+.profile-card {
+	background-color: #ffffff;
+	width: 600px;
+	height: 180px;
+	border-radius: 90px; /* makes it look like a cylinder */
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	position: relative;
-	margin-top: 50px;
-	margin-left: 50px;
-	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	padding: 20px 40px;
+	box-shadow: 0 4px 8px rgba (0,0,0,0.1);
+	margin: 15px auto 50; /* center it horizontally and move it down a bit */
 }
 
-.profile-cylinder img {
+.profile-image img {
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
-	object-fit: cover;
+	
+	border: 3px solid #2d3e50; 
+	display: block;
+	
+}
+
+.profile-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 30px;
 }
 
 .username {
-	position: absolute;
-	top: 10px;
-	right: 10px;
+	font-size: 22px;
 	font-weight: bold;
+	color: #333;
+	margin-bottom: 5px;
 }
 
 .description {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-	width: 120px;
 	font-size: 14px;
-	text-align: right;
+	color: #555;
 }

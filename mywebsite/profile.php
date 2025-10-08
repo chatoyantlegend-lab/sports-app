@@ -9,24 +9,37 @@
 </head>
 <body>
 	<div class="sidebar">
-		<ul>
-			<li>Profile</li>
-			<li>Activity</li>
-			<li>Friends</li>
-			<li>Schedule</li>
+		<div class="logo">
+			<img src="images/logo.png" alt="Logo">
+		</div>
+		<ul class="menu">
+			<li><img src="images/profile.png" alt="Profile">Profile</li>
+			<li><img src="images/activity.png" alt="Activity">Activity</li>
+			<li><img src="images/friends.png" alt="Friends">Friends</li>
+			<li><img src="images/schedule.png" alt="Schedule">Schedule</li>
 		</ul>
 	</div>
+	
 
 	<div class="main-content">
 		<div class="top-right-icons">
 			<span class="notifications">🔔</span>
 			<span class="settings">⚙️</span>
+			<span class="logout"><a href=logout.php>❌</a></span>
 		</div>
 
-		<div class="profile-cyllinder">
-			<img src="your-profile-pic.jpg" alt="Profile Picture">
-			<div class="username">username</div>
-			<div class=-"description">Tell us about yourself..</div>
+		<div class="profile-card">
+
+			<div class="profile-image">
+
+			<img src="images/profilepic.jpg" alt="Picture">
+			</div>
+
+			<div class="profile-info">
+				<h2 class="username">John Doe</h2>
+				<p class="description"> Tell us about yourself</p>
+			</div>
+			
 		</div>
 	</div>
 </body>
@@ -42,5 +55,4 @@ if(!isset($_SESSION['user']))
 
 ?>
 
-<h2>Welcome, <?php echo $_SESSION['user']; ?>!</h2>
-<a href=logout.php>Logout</a>
+

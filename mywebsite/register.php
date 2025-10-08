@@ -18,9 +18,12 @@
 
 <?php
 
-if(isset($_POST['register'])){
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+$check_sql = "SELECT * FROM users WHERE username ='$username' OR email ='$email'"
+$check_result = $conn->query($check_sql);
+
+if($check_result->num_rows > 0) {
+    echo "<p style='color:red;text-align:center;'>Username or Email already exists!</p>";
+} else {
     //Hash the password before storing
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
