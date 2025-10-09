@@ -1,7 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
-	box-sizing: borer-box;
+	box-sizing: border-box;
 	font-family: Arial, sans-serif;
 }
 
@@ -15,71 +15,275 @@ body {
 	width: 200px;
 	background-color: #fff;
 	border-right: 2px solid #ccc;
+	display: flex;
+	flex-direction: column;
+	
+	align-items: center;
 	padding: 20px;
+	height: 100vh;
+
+	
 
 }
-
-.sidebar lu {
-	list-style: none;
+.logo {
+	justify-content: center;
+	align-items: center;
+	display: flex;
 }
 
-.sidebar li {
-	margin-bottom: 20px;
-	cursor: pointer;
+.logo img {
+
+	width: 100px;
+	height: auto;
+	display: block;
+	
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 100px;
+	margin-top: 125px;
+	flex-grow:1 ;
+}
+
+.menu li {
+list-style: none;
+display: flex;
+align-items: center;
+gap: 10px;
+background-color: #2d3e50;
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+cursor: pointer;
+width: 80%;
+justify-content: center;
+transition: background-color 0.3s;
+}
+
+.menu li:hover {
+	background-color: #3e5065;
+}
+
+.menu img {
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+
 }
 
 .main-content {
 	flex: 1;
 	position: relative;
-	padding: 20px;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
 }
 
 .top-right-icons {
 	position: absolute;
-	top: 20px;
-	right: 20px;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
 }
 
 .top-right-icons span {
 	margin-left: 10px;
 	font-size: 24px;
 	cursor: pointer;
+	
 }
 
-.profile-cylinder {
-	width: 200px;
-	height: 200px;
+
+
+.profile-card {
+	background-color: #ffffff;
+	width: 600px;
+	height: 180px;
+	border-radius: 90px; /* makes it look like a cylinder */
+	display: flex;
+	align-items: center;
+	padding: 20px 40px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	margin: 15px auto 50; /* center it horizontally and move it down a bit */
+}
+
+.profile-image img {
+	width: 120px;
+	height: 120px;
 	border-radius: 50%;
-	background: #ddd;
+	
+	border: 3px solid #2d3e50; 
+	display: block;
+	
+}
+
+.profile-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 30px;
+}
+
+.username {
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.description {
+	font-size: 14px;
+	color: #555;
+}
+
+/* Dropdown menus */
+.notif-container,
+.settings-container {
+	position: relative;
+	display: inline-block;
+}
+
+/* Icons */
+.top-right-icons {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	align-items: center;
+	gap: 20px; /* space between icons */
+	z-index: 2000; /* make sure icons are always clickable */
+}
+
+/* Common dropdown styling */
+.notif-dropdown,
+.settings-dropdown {
+	display: none;
+	position: absolute;
+	top: 35px;
+	right: 0;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	padding: 10px;
+	width: 250px;
+	z-index: 3000; /* ensures it stays on top of everything */
+}
+
+/* Notification dropdown position */
+.notif-dropdown {
+	right: -20px; /* aligns slightly under the bell */
+	width: 280px;
+}
+
+	/* Dropdown link styles */
+	.notif-dropdown a,
+	.settings-dropdown a {
+		display: block;
+		padding: 10px 12px;
+		color: #333;
+		text-decoration: none;
+		border-radius: 6px;
+		transition: background-color 0.2s;
+	}
+
+		.notif-dropdown a:hover,
+		.settings-dropdown a:hover {
+			background-color: #f0f0f0;
+		}
+
+/* Optional visual debugging (remove after testing) */
+/*
+.settings-dropdown { border: 1px solid red; }
+.notif-dropdown { border: 1px solid blue; }
+*/
+
+
+/* ------------------------------
+   Edit Profile Page Styling
+------------------------------ */
+.edit-profile-container {
+	background-color: #ffffff;
+	width: 450px;
+	margin: 100px auto;
+	padding: 30px 35px;
+	border-radius: 15px;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	position: relative;
-	margin-top: 50px;
-	margin-left: 50px;
-	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.profile-cylinder img {
+	.edit-profile-container h2 {
+		text-align: center;
+		margin-bottom: 25px;
+		color: #2d3e50;
+		font-size: 24px;
+		font-weight: bold;
+	}
+
+	.edit-profile-container label {
+		font-weight: bold;
+		align-self: flex-start;
+		margin-top: 15px;
+		color: #333;
+		font-size: 14px;
+	}
+
+	.edit-profile-container input,
+	.edit-profile-container textarea {
+		margin-top: 6px;
+		padding: 10px 12px;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		width: 100%;
+		font-size: 14px;
+		transition: border-color 0.2s, box-shadow 0.2s;
+	}
+
+		.edit-profile-container input:focus,
+		.edit-profile-container textarea:focus {
+			outline: none;
+			border-color: #2d3e50;
+			box-shadow: 0 0 5px rgba(45,62,80,0.4);
+		}
+
+/* Profile picture preview */
+.profile-pic-preview {
 	width: 120px;
 	height: 120px;
 	border-radius: 50%;
 	object-fit: cover;
+	margin-top: 10px;
+	border: 3px solid #2d3e50;
 }
 
-.username {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	font-weight: bold;
+/* Button group */
+.button-group {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 25px;
+	width: 100%;
 }
 
-.description {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-	width: 120px;
-	font-size: 14px;
-	text-align: right;
-}
+	.button-group button {
+		background-color: #2d3e50;
+		color: white;
+		border: none;
+		padding: 10px 20px;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: bold;
+		transition: background-color 0.3s, transform 0.2s;
+	}
+
+		.button-group button:hover {
+			background-color: #3e5065;
+			transform: scale(1.03);
+		}
