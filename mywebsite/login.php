@@ -1,21 +1,55 @@
 <?php
-include("db.php");
-session_start(); // Start session to remember logged-in user
 
+session_start(); // Start session to remember logged-in user
+include("includes/db.php");
 ?>
 
-<h2>Login</h2>
-<form method ="POST" action="">
 
-	<label>Email:</label>
-	<input type="email" name="email" required><br></br>
 
-	<label>Password:</label>
-	<input type="password" name="password" required><br></br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style3.css">
+</head>
+<body>
+    <div class="login-container">
 
-	<button type="submit" name="login">Login</button>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
 
-</form>
+        <!-- Centered Main content -->
+        <div class="login-main">
+            <!-- Left Image-->
+            <div class ="login-image">
+                <img src="images/login-illustration.png" alt="Illustration">
+            </div>
+
+            <!-- Right Form -->
+            <div class="login-form">
+                <h2>Login</h2>
+                <form method="POST" action="">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit" name="login">Login</button>
+                </form>
+                <p>Don't have an account? <a href="register.php">Sign Up</a></p>
+            </div>
+        </div>
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2025 MyWebsite. All Rights reserved. | <a href="#">Privacy Policy</a> | <a href="#"> Terms</a></p>
+            </footer>
+
+        </div>
+</body>
+</html>
+
 
 <?php
 if (isset($_POST['login'])) {
@@ -30,7 +64,8 @@ if (isset($_POST['login'])) {
         $row = $result->fetch_assoc();
         // Verify hashed password
         if (password_verify($password, $row['password'])) {
-            $_SESSION['user'] = $row['username']; // store username in session
+            $_SESSION['user_id'] = $row['id']; // store id
+            $_SESSION['user'] = $row['username'];
             header("Location: profile.php"); // redirect to profile
             exit();
         } else {
