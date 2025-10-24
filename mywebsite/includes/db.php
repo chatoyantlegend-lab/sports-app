@@ -1,15 +1,20 @@
 <?php
-
+// Database connection settings
 $host = "localhost";
-$user = "root"; //XAMPP DEFAULT
-$pass = "";
-$db = "myapp";
+$user = "root";      // your MySQL username (default in XAMPP)
+$pass = "";          // your MySQL password (empty by default)
+$dbname = "myapp"; // name of your database
 
-$conn = new mysqli($host, $user, $pass, $db);
+// Create connection
+$conn = new mysqli($host, $user, $pass, $dbname);
 
-if ($conn -> connect_error)
-{
-    die("Connetion failed: ". $conn->connect_error);
-}
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} else 
+   
 
+
+// Set charset (important for emojis, special characters, etc.)
+$conn->set_charset("utf8mb4");
 ?>
